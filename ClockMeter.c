@@ -21,7 +21,7 @@ static void ClockMeter_updateValues(Meter* this, char* buffer, int size) {
    struct tm result;
    struct tm *lt = localtime_r(&t, &result);
    this->values[0] = lt->tm_hour * 60 + lt->tm_min;
-   strftime(buffer, size, "%H:%M:%S", lt);
+   strftime(buffer, size, "%H:%M:%S:%S", lt);
 }
 
 MeterClass ClockMeter_class = {
